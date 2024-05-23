@@ -72,4 +72,4 @@ classDiagram
     Reservation "1" --> "1" Client : faitePar
     Client "0..*" --> "0..*" Reservation : fait
 ```
-![Diagramme de classe-2024-05-23-120620](https://github.com/NoPYXN/TP_Diagramme/assets/124778566/a22adbb3-eaf6-423c-93aa-eb8384374673)
+
