@@ -90,3 +90,27 @@ flowchart TD
     G --> H[Fin]
     E --> H
 ```
+
+Diagramme de séquence du processus de réservation :
+
+```mermaid
+sequenceDiagram
+    participant Client
+    participant SystemeDeReservation
+    participant Hotel
+
+    Client->>SystemeDeReservation: Remplir Formulaire de Réservation
+    SystemeDeReservation->>Hotel: Vérifier Disponibilité
+    alt Chambre Disponible
+        Hotel-->>SystemeDeReservation: Chambre Disponible
+        SystemeDeReservation-->>Client: Chambre Disponible
+        Client->>SystemeDeReservation: Faire Réservation
+        SystemeDeReservation->>Hotel: Créer Réservation
+        SystemeDeReservation->>Client: Réservation Créée
+        Client->>SystemeDeReservation: Payer Acompte
+        SystemeDeReservation->>Client: Paiement Confirmé
+    else Chambre Non Disponible
+        Hotel-->>SystemeDeReservation: Chambre Non Disponible
+        SystemeDeReservation-->>Client: Chambre Non Disponible
+    end
+```
