@@ -73,3 +73,20 @@ classDiagram
     Client "0..*" --> "0..*" Reservation : fait
 ```
 
+Diagramme d'activité du processus de réservation : 
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': { 'fontSize': '16px', 'primaryColor': '#ffaa00', 'primaryBorderColor': '#ffcc00', 'primaryTextColor': '#000000', 'lineColor': '#000000', 'secondaryColor': '#ffdd66', 'tertiaryColor': '#ffee99'}}}%%
+---
+title: Diagramme d'activité
+---
+flowchart TD
+    A[Début] --> B[Remplir le formulaire de réservation]
+    B --> C{Vérifier la disponibilité}
+    C -->|Disponible| D[Créer la réservation]
+    C -->|Non disponible| E[Notifier le client]
+    D --> F[Payer les arrhes]
+    F --> G[Confirmer la réservation]
+    G --> H[Fin]
+    E --> H
+```
